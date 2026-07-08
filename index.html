@@ -6,12 +6,26 @@
     <title>PDF预览</title>
     <style>
         body {margin:0; padding:0; height:100vh; display:flex; flex-direction:column;}
-        .tip {padding:10px 20px; background:#222; color:#fff;}
+        .tip {padding:10px 20px; background:#222; color:#fff; text-align:center;}
+        .mobile-link {
+            padding:12px;
+            background:#eef5ff;
+            text-align:center;
+        }
+        .mobile-link a {
+            font-size:16px;
+            color:#005cfa;
+            font-weight:bold;
+        }
         iframe {flex:1; width:100%; border:none;}
     </style>
 </head>
 <body>
-    <div class="tip">下方为PDF预览，浏览器顶部工具栏自带下载按钮</div>
+    <div class="tip">PDF在线预览</div>
+    <!-- 手机iframe加载失败时，点链接直接新标签打开PDF -->
+    <div class="mobile-link">
+        <a href="./note.pdf" target="_blank">手机预览空白？点击这里直接打开并下载文档</a>
+    </div>
     <iframe src="./note.pdf"></iframe>
 </body>
 </html>
