@@ -3,29 +3,1614 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PDF预览</title>
+    <title>奥克斯企业文化全考点考试系统</title>
     <style>
-        body {margin:0; padding:0; height:100vh; display:flex; flex-direction:column;}
-        .tip {padding:10px 20px; background:#222; color:#fff; text-align:center;}
-        .mobile-link {
-            padding:12px;
-            background:#eef5ff;
-            text-align:center;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", sans-serif;
         }
-        .mobile-link a {
-            font-size:16px;
-            color:#005cfa;
-            font-weight:bold;
+        body {
+            background: #f5f7fa;
+            padding: 20px max(10px, calc(50% - 680px));
+            line-height: 1.6;
         }
-        iframe {flex:1; width:100%; border:none;}
+        .container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+        h1 {
+            text-align: center;
+            color: #d00000;
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+        .exam-info {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+            font-size: 14px;
+        }
+        .section-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 30px 0 15px;
+            color: #222;
+            padding-left: 10px;
+            border-left: 4px solid #d00000;
+        }
+        .question {
+            padding: 18px;
+            border: 1px solid #e8e8e8;
+            border-radius: 8px;
+            margin-bottom: 16px;
+            background: #fafbfc;
+        }
+        .q-stem {
+            font-size: 15px;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            padding-left: 4px;
+        }
+        .opt {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 5px 8px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .opt:hover {
+            background: #eef1f5;
+        }
+        .section-btn-area {
+            text-align: center;
+            margin: 20px 0 10px;
+        }
+        .submit-section-btn {
+            background: #d00000;
+            color: #fff;
+            border: none;
+            padding: 10px 40px;
+            font-size: 15px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        .submit-section-btn:hover {
+            background: #b30000;
+        }
+        .submit-section-btn:disabled {
+            background: #999;
+            cursor: not-allowed;
+        }
+        .section-result {
+            margin-top: 20px;
+            padding: 20px;
+            background: #f8f9fb;
+            border-radius: 8px;
+            display: none;
+        }
+        .section-score {
+            font-size: 17px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #d00000;
+            text-align: center;
+        }
+        .wrong-item {
+            padding: 15px;
+            margin-bottom: 12px;
+            background: #fff;
+            border-left: 4px solid #ff4d4f;
+        }
+        .correct-ans {
+            color: #009944;
+            font-weight: bold;
+            margin: 6px 0;
+        }
+        .user-ans {
+            color: #f5222d;
+            margin: 4px 0;
+        }
+        .wrong-explain {
+            color: #555;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px dashed #ddd;
+        }
+        .q-explain {
+            display: none;
+        }
+        .disabled .opt {
+            cursor: default;
+            opacity: 0.8;
+        }
     </style>
 </head>
 <body>
-    <div class="tip">PDF在线预览</div>
-    <!-- 手机iframe加载失败时，点链接直接新标签打开PDF -->
-    <div class="mobile-link">
-        <a href="./note.pdf" target="_blank">手机预览空白？点击这里直接打开并下载文档</a>
+<div class="container">
+    <h1>奥克斯企业文化全考点综合考试</h1>
+    <div class="exam-info">
+        单选题49题（每题2分）| 多选题47题（每题2分）| 判断题28题（每题2分）| 满分248分<br>
+        每部分答完可单独提交，立即查看得分与解析；多选题需全部选对方可得分
     </div>
-    <iframe src="./note.pdf"></iframe>
+
+    <form id="examForm">
+        <!-- 单选题模块 -->
+        <div id="singleSection">
+            <div class="section-title">一、单选题（共49题，每题2分，共98分）</div>
+
+            <div class="question" data-type="single" data-score="2" data-answer="B">
+                <div class="q-stem">1. 奥克斯人要具备IT思维，成为合格的“IT人”。下列哪项不属于“IT人10大特征”？</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q1" value="A">A. IT流程</label>
+                    <label class="opt"><input type="radio" name="q1" value="B">B. IT学历</label>
+                    <label class="opt"><input type="radio" name="q1" value="C">C. IT眼神</label>
+                    <label class="opt"><input type="radio" name="q1" value="D">D. IT思维</label>
+                </div>
+                <div class="q-explain">IT人10大特征为IT思维、IT眼神、IT语言、IT符号、IT标识、IT名字、IT逻辑、IT流程、IT行动、IT习惯，不包含IT学历，不强制专业背景。</div>
+            </div>
+
+            <div class="question" data-type="single" data-score="2" data-answer="B">
+                <div class="q-stem">2. 奥克斯聚焦四大核心主线提升竞争力，以下哪项不属于“4主线”？</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q2" value="A">A. 效率</label>
+                    <label class="opt"><input type="radio" name="q2" value="B">B. 数量</label>
+                    <label class="opt"><input type="radio" name="q2" value="C">C. 质量</label>
+                    <label class="opt"><input type="radio" name="q2" value="D">D. 成本</label>
+                </div>
+                <div class="q-explain">64359战略的4主线为成本、质量、效率、创新，不包含数量。</div>
+            </div>
+
+            <div class="question" data-type="single" data-score="2" data-answer="B">
+                <div class="q-stem">3. “6S触发”描述工作从无序到有序的转化过程，以下哪个转化方向是错误的？</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q3" value="A">A. 复杂→简单</label>
+                    <label class="opt"><input type="radio" name="q3" value="B">B. 严考→轻考</label>
+                    <label class="opt"><input type="radio" name="q3" value="C">C. 无凭→留痕</label>
+                    <label class="opt"><input type="radio" name="q3" value="D">D. 无形→有形</label>
+                </div>
+                <div class="q-explain">6S触发第五条为「轻考→严考」，选项表述颠倒，方向错误。</div>
+            </div>
+
+            <div class="question" data-type="single" data-score="2" data-answer="B">
+                <div class="q-stem">4. 以下关于新能源产业的说法，错误的是？</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q4" value="A">A. 着力打造产品、技术、市场、服务一体式平台</label>
+                    <label class="opt"><input type="radio" name="q4" value="B">B. 旗下拥有智能科技、奥克斯储能等制造公司</label>
+                    <label class="opt"><input type="radio" name="q4" value="C">C. 助力标志性项目并网发电并持续稳定运行</label>
+                    <label class="opt"><input type="radio" name="q4" value="D">D. 专注新能源箱变、光伏逆变器、储能、充电桩研发生产</label>
+                </div>
+                <div class="q-explain">新能源储能主体为宁波奥克斯智能科技、奥克斯甬能、奥能电气，不存在名为“奥克斯储能”的独立制造公司。</div>
+            </div>
+
+            <div class="question" data-type="single" data-score="2" data-answer="A">
+                <div class="q-stem">5. 关于“轻重缓急、精力配置”二维矩阵，以下哪项描述是正确的？</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q5" value="A">A. 纵向：重、轻、弃；横向：急、缓、弃</label>
+                    <label class="opt"><input type="radio" name="q5" value="B">B. 纵向：多、少、无；横向：快、慢、停</label>
+                    <label class="opt"><input type="radio" name="q5" value="C">C. 纵向：急、缓、弃；横向：重、轻、弃</label>
+                    <label class="opt"><input type="radio" name="q5" value="D">D. 纵向：高、中、低；横向：先、中、后</label>
+                </div>
+                <div class="q-explain">抓弃效节图规则为纵向（重要度）：重、轻、弃；横向（紧急度）：急、缓、弃。</div>
+            </div>
+
+            <div class="question" data-type="single" data-score="2" data-answer="A">
+                <div class="q-stem">6. 奥克斯始创于哪一年？</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q6" value="A">A. 1986</label>
+                    <label class="opt"><input type="radio" name="q6" value="B">B. 1968</label>
+                    <label class="opt"><input type="radio" name="q6" value="C">C. 1994</label>
+                    <label class="opt"><input type="radio" name="q6" value="D">D. 1988</label>
+                </div>
+                <div class="q-explain">奥克斯集团始创于1986年。</div>
+            </div>
+
+            <div class="question" data-type="single" data-score="2" data-answer="D">
+                <div class="q-stem">7. “干部6评价”中，以下哪个维度不属于评价标准？</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q7" value="A">A. 切入、抓手、举一反三</label>
+                    <label class="opt"><input type="radio" name="q7" value="B">B. 识育用人、用组织</label>
+                    <label class="opt"><input type="radio" name="q7" value="C">C. 5一线、落地高效干</label>
+                    <label class="opt"><input type="radio" name="q7" value="D">D. 标准解读、客户需求解读、使用场景解读</label>
+                </div>
+                <div class="q-explain">选项D属于「3读」的内容，不属于干部6评价维度。</div>
+            </div>
+
+            <div class="question" data-type="single" data-score="2" data-answer="C">
+                <div class="q-stem">8. 关于“主动赋能”的核心特征，以下描述正确的是？</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q8" value="A">A. 被动接受领导安排的分享任务</label>
+                    <label class="opt"><input type="radio" name="q8" value="B">B. 只分享对自己有利的案例</label>
+                    <label class="opt"><input type="radio" name="q8" value="C">C. 将有借鉴意义的案例主动分享并讲解指导，帮助他人应用</label>
+                    <label class="opt"><input type="radio" name="q8" value="D">D. 完成自己工作即可，无需赋能他人</label>
+                </div>
+                <div class="q-explain">主动赋能是主动分享有借鉴/指导意义的案例，主动讲解指导，帮助他人理解应用，举一反三。</div>
+            </div>
+
+            <div class="question" data-type="single" data-score="2" data-answer="D">
+                <div class="q-stem">9. “流程4定义”中，以下哪项不属于奥克斯流程必须具备的特征？</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q9" value="A">A. 名词定义精准</label>
+                    <label class="opt"><input type="radio" name="q9" value="B">B. 可测量、可计算、可植入IT</label>
+                    <label class="opt"><input type="radio" name="q9" value="C">C. 有场景、有案例、有基准</label>
+                    <label class="opt"><input type="radio" name="q9" value="D">D. 流程越复杂越好</label>
+                </div>
+                <div class="q-explain">流程核心是化繁为简、高效落地，并非越复杂越好。</div>
+            </div>
+
+            <div class="question" data-type="single" data-score="2" data-answer="D">
+                <div class="q-stem">10. 向董事长请示汇报要求“四可”，以下哪项不属于“四可”？</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q10" value="A">A. 可IT</label>
+                    <label class="opt"><input type="radio" name="q10" value="B">B. 可测量</label>
+                    <label class="opt"><input type="radio" name="q10" value="C">C. 可计算</label>
+                    <label class="opt"><input type="radio" name="q10" value="D">D. 可省略</label>
+                </div>
+                <div class="q-explain">四可为可测量、可计算、可流程、可IT。</div>
+            </div>
+
+            <div class="question" data-type="single" data-score="2" data-answer="C">
+                <div class="q-stem">11. 奥克斯集团整体有（ ）大研发中心，（ ）大制造基地？</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q11" value="A">A. 8；18</label>
+                    <label class="opt"><input type="radio" name="q11" value="B">B. 7；18</label>
+                    <label class="opt"><input type="radio" name="q11" value="C">C. 7；17</label>
+                    <label class="opt"><input type="radio" name="q11" value="D">D. 8；17</label>
+                </div>
+                <div class="q-explain">奥克斯集团整体拥有7大研发中心、17大制造基地。</div>
+            </div>
+
+            <div class="question" data-type="single" data-score="2" data-answer="B">
+                <div class="q-stem">12. 能够直接解决问题，彻底消除超过90%问题场景的痛基，被称为？</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q12" value="A">A. 表面痛基</label>
+                    <label class="opt"><input type="radio" name="q12" value="B">B. 初始痛基</label>
+                    <label class="opt"><input type="radio" name="q12" value="C">C. 结果痛基</label>
+                    <label class="opt"><input type="radio" name="q12" value="D">D. 分类痛基</label>
+                </div>
+                <div class="q-explain">初始痛基基于问题根源，可覆盖90%以上问题场景，从源头解决问题。</div>
+            </div>
+
+            <div class="question" data-type="single" data-score="2" data-answer="C">
+                <div class="q-stem">13. “64359战略”中的“3触点”，以下哪项属于其中之一？</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q13" value="A">A. 成本</label>
+                    <label class="opt"><input type="radio" name="q13" value="B">B. 效率</label>
+                    <label class="opt"><input type="radio" name="q13" value="C">C. 2权(批权、信权)</label>
+                    <label class="opt"><input type="radio" name="q13" value="D">D. 创新</label>
+                </div>
+                <div class="q-explain">3触点为2权（批权、信权）、抢单、客诉。</div>
+            </div>
+
+            <div class="question" data-type="single" data-score="2" data-answer="B">
+                <div class="q-stem">14. 奥克斯“1个梦想”的具体内容是？</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q14" value="A">A. 升职加薪、位高权重</label>
+                    <label class="opt"><input type="radio" name="q14" value="B">B. 实现价值、承担责任</label>
+                    <label class="opt"><input type="radio" name="q14" value="C">C. 只承担责任、不计较价值</label>
+                    <label class="opt"><input type="radio" name="q14" value="D">D. 工作轻松、没有压力</label>
+                </div>
+                <div class="q-explain">1个梦想即实现价值、承担责任，是奥克斯人的职业追求。</div>
+            </div>
+
+            <div class="question" data-type="single" data-score="2" data-answer="B">
+                <div class="q-stem">15. “IT开标规17要素”中，以下哪项不属于IT业务要素？</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q15" value="A">A. 权限</label>
+                    <label class="opt"><input type="radio" name="q15" value="B">B. 供应商代码</label>
+                    <label class="opt"><input type="radio" name="q15" value="C">C. 报表</label>
+                    <label class="opt"><input type="radio" name="q15" value="D">D. 需求(模块)</label>
+                </div>
+                <div class="q-explain">IT业务8要素为需求(模块)、报表、模板、权限、界面、指标、基础数据、痛基3表，不包含供应商代码。</div>
+            </div>
+
+            <div class="question" data-type="single" data-score="2" data-answer="A">
+                <div class="q-stem">16. “5个核心围绕”不包含以下哪一项？</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q16" value="A">A. 创新</label>
+                    <label class="opt"><input type="radio" name="q16" value="B">B. 客户需求</label>
+                    <label class="opt"><input type="radio" name="q16" value="C">C. 理性高目标</label>
+                    <label class="opt"><input type="radio" name="q16" value="D">D. 标杆比对</label>
+                </div>
+                <div class="q-explain">5个核心围绕：客户需求、理性高目标、问题暴露、标杆比对、产品领先。</div>
+            </div>
+
+            <div class="question" data-type="single" data-score="2" data-answer="D">
+                <div class="q-stem">17. 以下不属于“3规”内容的是？</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q17" value="A">A. 新规出台要模拟</label>
+                    <label class="opt"><input type="radio" name="q17" value="B">B. 有规不循要严打</label>
+                    <label class="opt"><input type="radio" name="q17" value="C">C. 规则失效要重来</label>
+                    <label class="opt"><input type="radio" name="q17" value="D">D. 新规出台不模拟</label>
+                </div>
+                <div class="q-explain">3规：新规出台要模拟（有案例、有基准、有对标）、有规不循要严打、规则失效要重来。</div>
+            </div>
+
+            <div class="question" data-type="single" data-score="2" data-answer="D">
+                <div class="q-stem">18. “流程5句话”不包含以下哪项？</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q18" value="A">A. 做事行动应有规</label>
+                    <label class="opt"><input type="radio" name="q18" value="B">B. 7切8问须流程</label>
+                    <label class="opt"><input type="radio" name="q18" value="C">C. 有规不循要严打</label>
+                    <label class="opt"><input type="radio" name="q18" value="D">D. 新规出台不模拟</label>
+                </div>
+                <div class="q-explain">流程5句话：做事行动应有规，7切8问须流程，烦事无规要扣分，新规出台须模拟，有规不循要严打。</div>
+            </div>
+
+            <div class="question" data-type="single" data-score="2" data-answer="A">
+                <div class="q-stem">19. 以下不属于“3严打”内容的是？</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q19" value="A">A. 未报先批</label>
+                    <label class="opt"><input type="radio" name="q19" value="B">B. 未立先动</label>
+                    <label class="opt"><input type="radio" name="q19" value="C">C. 未明先动</label>
+                    <label class="opt"><input type="radio" name="q19" value="D">D. 未始发留痕</label>
+                </div>
+                <div class="q-explain">3严打：未立先动、未明先动、未始发留痕。</div>
+            </div>
+
+            <div class="question" data-type="single" data-score="2" data-answer="A">
+                <div class="q-stem">20. “对标定基”的对标对象不包含以下哪项？</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q20" value="A">A. 竞品</label>
+                    <label class="opt"><input type="radio" name="q20" value="B">B. 同行</label>
+                    <label class="opt"><input type="radio" name="q20" value="C">C. 跨行</label>
+                    <label class="opt"><input type="radio" name="q20" value="D">D. 供应商</label>
+                </div>
+                <div class="q-explain">对标对象为同行、跨行、供应商。</div>
+            </div>
+
+            <div class="question" data-type="single" data-score="2" data-answer="C">
+                <div class="q-stem">21. “IT品质9要素”不包含以下哪一项？</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q21" value="A">A. 速度</label>
+                    <label class="opt"><input type="radio" name="q21" value="B">B. 安全</label>
+                    <label class="opt"><input type="radio" name="q21" value="C">C. 成本</label>
+                    <label class="opt"><input type="radio" name="q21" value="D">D. 界面</label>
+                </div>
+                <div class="q-explain">IT品质9要素：速度、界面、功能、报表、兼容性、并发量、安全、系统技术、供方要求。</div>
+            </div>
+
+            <div class="question" data-type="single" data-score="2" data-answer="A">
+                <div class="q-stem">22. “思想10层级”不包含以下哪一项？</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q22" value="A">A. 错</label>
+                    <label class="opt"><input type="radio" name="q22" value="B">B. 简</label>
+                    <label class="opt"><input type="radio" name="q22" value="C">C. 弃</label>
+                    <label class="opt"><input type="radio" name="q22" value="D">D. 连</label>
+                </div>
+                <div class="q-explain">思想10层级：框、标、点、层、边、朦、糊、筒、弃、连。</div>
+            </div>
+
+            <div class="question" data-type="single" data-score="2" data-answer="B">
+                <div class="q-stem">23. “5大方法工具”中不包含以下哪一项？</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q23" value="A">A. 复盘重来</label>
+                    <label class="opt"><input type="radio" name="q23" value="B">B. 4分法</label>
+                    <label class="opt"><input type="radio" name="q23" value="C">C. 9一键</label>
+                    <label class="opt"><input type="radio" name="q23" value="D">D. 集体决策</label>
+                </div>
+                <div class="q-explain">5大方法工具：5名词、6最11法、9一键、复盘重来、集体决策。</div>
+            </div>
+
+            <div class="question" data-type="single" data-score="2" data-answer="D">
+                <div class="q-stem">24. 以下不属于“4暴”内容的是？</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q24" value="A">A. 错</label>
+                    <label class="opt"><input type="radio" name="q24" value="B">B. 漏</label>
+                    <label class="opt"><input type="radio" name="q24" value="C">C. 多</label>
+                    <label class="opt"><input type="radio" name="q24" value="D">D. 增</label>
+                </div>
+                <div class="q-explain">4暴：错、漏、多、糊；4梳：增、删、并、改。</div>
+            </div>
+
+            <div class="question" data-type="single" data-score="2" data-answer="A">
+                <div class="q-stem">25. “审计333”规则的具体内容是？</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q25" value="A">A. 30分钟定性，3小时定量，3天定责</label>
+                    <label class="opt"><input type="radio" name="q25" value="B">B. 3小时定性，3天定量，30天定责</label>
+                    <label class="opt"><input type="radio" name="q25" value="C">C. 3天定性，3周定量，3月定责</label>
+                    <label class="opt"><input type="radio" name="q25" value="D">D. 30分钟定性，3天定量，3月定责</label>
+                </div>
+                <div class="q-explain">审计333原则：30分钟定性，3小时定量，3天定责。</div>
+            </div>
+
+            <div class="question" data-type="single" data-score="2" data-answer="B">
+                <div class="q-stem">26. 关于“时顺名图”，以下说法不正确的是？</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q26" value="A">A. 横向为时间轴、顺序，纵向为场景内相关名词</label>
+                    <label class="opt"><input type="radio" name="q26" value="B">B. 核心目的是管理员工绩效</label>
+                    <label class="opt"><input type="radio" name="q26" value="C">C. 可让暴问更精准、到点位</label>
+                    <label class="opt"><input type="radio" name="q26" value="D">D. 是流项落地的工具之一</label>
+                </div>
+                <div class="q-explain">时顺名图是流程落地、暴问精准化的工具，并非员工绩效管理工具。</div>
+            </div>
+
+            <div class="question" data-type="single" data-score="2" data-answer="D">
+                <div class="q-stem">27. “售服3职能”不包含以下哪一项？</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q27" value="A">A. 暴问价值链倒逼</label>
+                    <label class="opt"><input type="radio" name="q27" value="B">B. 复购增销量</label>
+                    <label class="opt"><input type="radio" name="q27" value="C">C. 塑造品牌口碑</label>
+                    <label class="opt"><input type="radio" name="q27" value="D">D. 无条件答应客户需求</label>
+                </div>
+                <div class="q-explain">售服3职能：暴问价值链倒逼、复购增销量、塑造品牌口碑。</div>
+            </div>
+
+            <div class="question" data-type="single" data-score="2" data-answer="C">
+                <div class="q-stem">28. 奥克斯三大创新不包含以下哪一项？</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q28" value="A">A. 战略创新</label>
+                    <label class="opt"><input type="radio" name="q28" value="B">B. 管理创新</label>
+                    <label class="opt"><input type="radio" name="q28" value="C">C. 领导创新</label>
+                    <label class="opt"><input type="radio" name="q28" value="D">D. 产品创新</label>
+                </div>
+                <div class="q-explain">三大创新为战略、管理、产品创新。</div>
+            </div>
+
+            <div class="question" data-type="single" data-score="2" data-answer="D">
+                <div class="q-stem">29. “4抢”中，不属于公司倡导的行为是？</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q29" value="A">A. 培训抢名额</label>
+                    <label class="opt"><input type="radio" name="q29" value="B">B. 竞聘抢报名</label>
+                    <label class="opt"><input type="radio" name="q29" value="C">C. 项目抢机会</label>
+                    <label class="opt"><input type="radio" name="q29" value="D">D. 业绩抢排名</label>
+                </div>
+                <div class="q-explain">4抢：开会抢话筒、培训抢名额、竞聘抢报名、项目抢机会。</div>
+            </div>
+
+            <div class="question" data-type="single" data-score="2" data-answer="D">
+                <div class="q-stem">30. “PPT原创评价5+2”中，讲PPT者的5维度不包含？</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q30" value="A">A. 语句原创</label>
+                    <label class="opt"><input type="radio" name="q30" value="B">B. 框架章节</label>
+                    <label class="opt"><input type="radio" name="q30" value="C">C. 案例链接</label>
+                    <label class="opt"><input type="radio" name="q30" value="D">D. 演讲者口才</label>
+                </div>
+                <div class="q-explain">讲PPT者5维度：语句原创、框架章节、案例链接、表现形式、色彩运用。</div>
+            </div>
+
+            <div class="question" data-type="single" data-score="2" data-answer="A">
+                <div class="q-stem">31. 奥克斯电能产业拥有几个研发中心、几个制造中心？</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q31" value="A">A. 4研发；10制造</label>
+                    <label class="opt"><input type="radio" name="q31" value="B">B. 7研发；17制造</label>
+                    <label class="opt"><input type="radio" name="q31" value="C">C. 10研发；4制造</label>
+                    <label class="opt"><input type="radio" name="q31" value="D">D. 5研发；8制造</label>
+                </div>
+                <div class="q-explain">奥克斯电能产业拥有4大研发中心、10大制造中心。</div>
+            </div>
+
+            <div class="question" data-type="single" data-score="2" data-answer="B">
+                <div class="q-stem">32. 以下哪项不属于“降本9路径”？</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q32" value="A">A. 引新破独</label>
+                    <label class="opt"><input type="radio" name="q32" value="B">B. 涨价提利</label>
+                    <label class="opt"><input type="radio" name="q32" value="C">C. 去冗国产</label>
+                    <label class="opt"><input type="radio" name="q32" value="D">D. 集配赋能</label>
+                </div>
+                <div class="q-explain">降本9路径为引新、破独、赋能、三新、去冗、国产、自制、计转、集配，不包含涨价提利。</div>
+            </div>
+
+            <div class="question" data-type="single" data-score="2" data-answer="D">
+                <div class="q-stem">33. 以下哪项不属于“IT3要素”？</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q33" value="A">A. AUX元素</label>
+                    <label class="opt"><input type="radio" name="q33" value="B">B. 直导率</label>
+                    <label class="opt"><input type="radio" name="q33" value="C">C. 自动提示率</label>
+                    <label class="opt"><input type="radio" name="q33" value="D">D. 成本率</label>
+                </div>
+                <div class="q-explain">IT3要素为AUX元素、直导率、自动提示率。</div>
+            </div>
+
+            <div class="question" data-type="single" data-score="2" data-answer="B">
+                <div class="q-stem">34. 关于岗位ID的作用，以下描述正确的是？</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q34" value="A">A. 仅用于员工考勤统计</label>
+                    <label class="opt"><input type="radio" name="q34" value="B">B. 是连接人员和权限的桥梁，是公司分权管理的载体</label>
+                    <label class="opt"><input type="radio" name="q34" value="C">C. 仅用于薪资核算</label>
+                    <label class="opt"><input type="radio" name="q34" value="D">D. 是员工职级的唯一标识</label>
+                </div>
+                <div class="q-explain">岗位ID作为连接人员和权限的桥梁，是公司分权管理的载体。</div>
+            </div>
+
+            <div class="question" data-type="single" data-score="2" data-answer="B">
+                <div class="q-stem">35. 以下哪项不属于“用人8维度”的核心考察项？</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q35" value="A">A. 能力素质</label>
+                    <label class="opt"><input type="radio" name="q35" value="B">B. 职业证书</label>
+                    <label class="opt"><input type="radio" name="q35" value="C">C. 业绩成果</label>
+                    <label class="opt"><input type="radio" name="q35" value="D">D. 文化契合</label>
+                </div>
+                <div class="q-explain">选人8维度不将职业证书作为核心考察项。</div>
+            </div>
+
+            <div class="question" data-type="single" data-score="2" data-answer="B">
+                <div class="q-stem">36. 奥克斯目前有几家上市公司？</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q36" value="A">A. 2家</label>
+                    <label class="opt"><input type="radio" name="q36" value="B">B. 3家</label>
+                    <label class="opt"><input type="radio" name="q36" value="C">C. 4家</label>
+                    <label class="opt"><input type="radio" name="q36" value="D">D. 5家</label>
+                </div>
+                <div class="q-explain">奥克斯目前拥有3家上市公司。</div>
+            </div>
+
+            <div class="question" data-type="single" data-score="2" data-answer="A">
+                <div class="q-stem">37. “任务12工具”中，用于处理复杂问题、化繁为简的核心工具是？</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q37" value="A">A. 4分法</label>
+                    <label class="opt"><input type="radio" name="q37" value="B">B. 复盘重来</label>
+                    <label class="opt"><input type="radio" name="q37" value="C">C. 对标选基</label>
+                    <label class="opt"><input type="radio" name="q37" value="D">D. 通排</label>
+                </div>
+                <div class="q-explain">4分法是任务12工具中化繁为简、拆解复杂问题的核心工具。</div>
+            </div>
+
+            <div class="question" data-type="single" data-score="2" data-answer="B">
+                <div class="q-stem">38. 以下哪项不属于“5更”的范围？</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q38" value="A">A. 更有本事</label>
+                    <label class="opt"><input type="radio" name="q38" value="B">B. 更有价值</label>
+                    <label class="opt"><input type="radio" name="q38" value="C">C. 更高效率</label>
+                    <label class="opt"><input type="radio" name="q38" value="D">D. 更好结果</label>
+                </div>
+                <div class="q-explain">“5更”体系不包含“更有价值”。</div>
+            </div>
+
+            <div class="question" data-type="single" data-score="2" data-answer="C">
+                <div class="q-stem">39. 关于“预总会”的描述，以下正确的是？</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q39" value="A">A. 仅项目启动前开预备会</label>
+                    <label class="opt"><input type="radio" name="q39" value="B">B. 仅项目结束后开总结会</label>
+                    <label class="opt"><input type="radio" name="q39" value="C">C. 对标前需召开预备会，对标后需召开总结会</label>
+                    <label class="opt"><input type="radio" name="q39" value="D">D. 仅用于月度经营复盘</label>
+                </div>
+                <div class="q-explain">预总会即对标前开预备会、对标后开总结会，是项目对标管理的标准流程。</div>
+            </div>
+
+            <div class="question" data-type="single" data-score="2" data-answer="A">
+                <div class="q-stem">40. “灵魂11拷”中，“沟通目标清晰是基准、方向”强调的核心是？</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q40" value="A">A. 确定沟通的最终目的</label>
+                    <label class="opt"><input type="radio" name="q40" value="B">B. 提升沟通的语速</label>
+                    <label class="opt"><input type="radio" name="q40" value="C">C. 增加沟通的次数</label>
+                    <label class="opt"><input type="radio" name="q40" value="D">D. 扩大沟通的范围</label>
+                </div>
+                <div class="q-explain">该条强调要先明确沟通的最终目的，以目标为导向开展沟通。</div>
+            </div>
+
+            <div class="question" data-type="single" data-score="2" data-answer="A">
+                <div class="q-stem">41. 时间论中，最有本事的人具备的核心能力是？</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q41" value="A">A. 在规定时间内能够同时做成几件事</label>
+                    <label class="opt"><input type="radio" name="q41" value="B">B. 能无限延长工作时间</label>
+                    <label class="opt"><input type="radio" name="q41" value="C">C. 只专注做一件事</label>
+                    <label class="opt"><input type="radio" name="q41" value="D">D. 能把任务转交给他人</label>
+                </div>
+                <div class="q-explain">时间论核心认知：更有本事的人能在规定时间内同时做成几件事。</div>
+            </div>
+
+            <div class="question" data-type="single" data-score="2" data-answer="D">
+                <div class="q-stem">42. 以下哪项不属于“6最”的认知？</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q42" value="A">A. 拿来主义最快捷</label>
+                    <label class="opt"><input type="radio" name="q42" value="B">B. 比对方法最直观</label>
+                    <label class="opt"><input type="radio" name="q42" value="C">C. 方法工具最管用</label>
+                    <label class="opt"><input type="radio" name="q42" value="D">D. 自主研发最划算</label>
+                </div>
+                <div class="q-explain">“6最”包含拿来主义最快捷、比对方法最直观、方法工具最管用等，不包含自主研发最划算。</div>
+            </div>
+
+            <div class="question" data-type="single" data-score="2" data-answer="B">
+                <div class="q-stem">43. “6否决”条款中，以下哪种行为会被一票否决？</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q43" value="A">A. 偶尔犯错</label>
+                    <label class="opt"><input type="radio" name="q43" value="B">B. 低错多犯</label>
+                    <label class="opt"><input type="radio" name="q43" value="C">C. 创新失败</label>
+                    <label class="opt"><input type="radio" name="q43" value="D">D. 经验不足</label>
+                </div>
+                <div class="q-explain">“6否决”条款中，低错多犯属于一票否决情形。</div>
+            </div>
+
+            <!-- 新增单选题 -->
+            <div class="question" data-type="single" data-score="2" data-answer="B">
+                <div class="q-stem">44. 在奥克斯用电产业中，有()大制造中心，()大研发中心?</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q44" value="A">A. 7;4</label>
+                    <label class="opt"><input type="radio" name="q44" value="B">B. 10;4</label>
+                    <label class="opt"><input type="radio" name="q44" value="C">C. 10;17</label>
+                    <label class="opt"><input type="radio" name="q44" value="D">D. 7;17</label>
+                </div>
+                <div class="q-explain">奥克斯用电产业拥有10大制造中心、4大研发中心。</div>
+            </div>
+
+            <div class="question" data-type="single" data-score="2" data-answer="B">
+                <div class="q-stem">45. 在奥克斯，我们鼓励员工积极争取机会，展现自我价值。以下哪项行为不属于奥克斯倡导的“4抢”文化？</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q45" value="A">A. 开会抢话筒</label>
+                    <label class="opt"><input type="radio" name="q45" value="B">B. 上班抢时间</label>
+                    <label class="opt"><input type="radio" name="q45" value="C">C. 培训抢名额</label>
+                    <label class="opt"><input type="radio" name="q45" value="D">D. 项目抢机会</label>
+                </div>
+                <div class="q-explain">4抢为开会抢话筒、培训抢名额、竞聘抢报名、项目抢机会，不包含上班抢时间。</div>
+            </div>
+
+            <div class="question" data-type="single" data-score="2" data-answer="D">
+                <div class="q-stem">46. E-HR重构案例中从新疆调研失败到后续3家企业调研成功核心体现了什么理念？</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q46" value="A">A. 预备会</label>
+                    <label class="opt"><input type="radio" name="q46" value="B">B. 扁平化</label>
+                    <label class="opt"><input type="radio" name="q46" value="C">C. 切割</label>
+                    <label class="opt"><input type="radio" name="q46" value="D">D. 总结会</label>
+                </div>
+                <div class="q-explain">新疆EHR项目首次调研失败后，通过召开总结会复盘问题，后续与3家企业谈判均取得成功，核心体现了总结会的复盘理念。</div>
+            </div>
+
+            <div class="question" data-type="single" data-score="2" data-answer="B">
+                <div class="q-stem">47. “管理目标5要点”为我们的管理工作指明了方向。以下哪个选项不是这5个要点之一？</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q47" value="A">A. 全链</label>
+                    <label class="opt"><input type="radio" name="q47" value="B">B. 宽松</label>
+                    <label class="opt"><input type="radio" name="q47" value="C">C. 高质</label>
+                    <label class="opt"><input type="radio" name="q47" value="D">D. 高效</label>
+                </div>
+                <div class="q-explain">管理目标5要点聚焦全链、高质、高效等核心方向，不包含宽松。</div>
+            </div>
+
+            <div class="question" data-type="single" data-score="2" data-answer="B">
+                <div class="q-stem">48. 在识别人才时，我们有多维度的考量。关于“选人8大维度”，以下哪项是不包括在内的？</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q48" value="A">A. 业绩</label>
+                    <label class="opt"><input type="radio" name="q48" value="B">B. 职称证书</label>
+                    <label class="opt"><input type="radio" name="q48" value="C">C. 晋符率</label>
+                    <label class="opt"><input type="radio" name="q48" value="D">D. 轮岗</label>
+                </div>
+                <div class="q-explain">选人8大维度以能力、业绩、文化契合等为核心，不将职称证书作为核心考察维度。</div>
+            </div>
+
+            <div class="question" data-type="single" data-score="2" data-answer="C">
+                <div class="q-stem">49. 奥克斯强调要到一线去发现和解决问题。在“5一线”的工作方法中，以下哪一项是不包括的？</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q49" value="A">A. 见实物</label>
+                    <label class="opt"><input type="radio" name="q49" value="B">B. 到现场</label>
+                    <label class="opt"><input type="radio" name="q49" value="C">C. 听汇报</label>
+                    <label class="opt"><input type="radio" name="q49" value="D">D. 下基层</label>
+                </div>
+                <div class="q-explain">5一线工作法为下基层、到现场、见实物、用数源、立即干，不包含听汇报。</div>
+            </div>
+
+            <div class="section-btn-area">
+                <button type="button" class="submit-section-btn" id="submitSingle">提交单选题</button>
+            </div>
+            <div class="section-result" id="singleResult"></div>
+        </div>
+
+        <!-- 多选题模块 -->
+        <div id="multiSection">
+            <div class="section-title">二、多选题（共47题，每题2分，共94分，少选错选均不得分）</div>
+
+            <div class="question" data-type="multi" data-score="2" data-answer="BCDEF">
+                <div class="q-stem">1. 以下哪些属于“任务12工具”？</div>
+                <div class="options">
+                    <label class="opt"><input type="checkbox" name="q50" value="A">A. 钉群</label>
+                    <label class="opt"><input type="checkbox" name="q50" value="B">B. 复盘重来</label>
+                    <label class="opt"><input type="checkbox" name="q50" value="C">C. 建群</label>
+                    <label class="opt"><input type="checkbox" name="q50" value="D">D. 4测</label>
+                    <label class="opt"><input type="checkbox" name="q50" value="E">E. 4梳</label>
+                    <label class="opt"><input type="checkbox" name="q50" value="F">F. 4分法</label>
+                </div>
+                <div class="q-explain">任务12工具：建群、4分法、4测、4梳、复盘重来、项目、痛基3表、通排、流程、对标选基、激励、4动。钉群属于9一键范畴。</div>
+            </div>
+
+            <div class="question" data-type="multi" data-score="2" data-answer="ABCDF">
+                <div class="q-stem">2. “表单10规1注”中的“10规”包含哪些要求？</div>
+                <div class="options">
+                    <label class="opt"><input type="checkbox" name="q51" value="A">A. 比对</label>
+                    <label class="opt"><input type="checkbox" name="q51" value="B">B. 少留白</label>
+                    <label class="opt"><input type="checkbox" name="q51" value="C">C. 逻辑</label>
+                    <label class="opt"><input type="checkbox" name="q51" value="D">D. 基准</label>
+                    <label class="opt"><input type="checkbox" name="q51" value="E">E. 独创</label>
+                    <label class="opt"><input type="checkbox" name="q51" value="F">F. 观全貌</label>
+                </div>
+                <div class="q-explain">10规：观全貌、少留白、留余地、逻辑、比对、基准、线条运用、标识、名词定义、唯一性。</div>
+            </div>
+
+            <div class="question" data-type="multi" data-score="2" data-answer="BCEF">
+                <div class="q-stem">3. 以下哪些是“外聘高管面试模型”的关键环节？</div>
+                <div class="options">
+                    <label class="opt"><input type="checkbox" name="q52" value="A">A. 试用期考核</label>
+                    <label class="opt"><input type="checkbox" name="q52" value="B">B. PPT</label>
+                    <label class="opt"><input type="checkbox" name="q52" value="C">C. 素模评分</label>
+                    <label class="opt"><input type="checkbox" name="q52" value="D">D. 薪酬谈判</label>
+                    <label class="opt"><input type="checkbox" name="q52" value="E">E. 预备会</label>
+                    <label class="opt"><input type="checkbox" name="q52" value="F">F. 深挖互动</label>
+                </div>
+                <div class="q-explain">外聘高管面试7环节：预备会、素模评分、PPT、KPI、上白板、测试大纲、深挖互动。</div>
+            </div>
+
+            <div class="question" data-type="multi" data-score="2" data-answer="ABC">
+                <div class="q-stem">4. 奥克斯提倡的“汇报3导向”是指？</div>
+                <div class="options">
+                    <label class="opt"><input type="checkbox" name="q53" value="A">A. 价值导向</label>
+                    <label class="opt"><input type="checkbox" name="q53" value="B">B. 目标导向</label>
+                    <label class="opt"><input type="checkbox" name="q53" value="C">C. 问题导向</label>
+                    <label class="opt"><input type="checkbox" name="q53" value="D">D. 领导导向</label>
+                </div>
+                <div class="q-explain">汇报3导向：问题导向、价值导向、目标导向。</div>
+            </div>
+
+            <div class="question" data-type="multi" data-score="2" data-answer="ABCE">
+                <div class="q-stem">5. “汇报3导向、4落地”中的“4落地”是指？</div>
+                <div class="options">
+                    <label class="opt"><input type="checkbox" name="q54" value="A">A. 资源</label>
+                    <label class="opt"><input type="checkbox" name="q54" value="B">B. 抓手</label>
+                    <label class="opt"><input type="checkbox" name="q54" value="C">C. 切入</label>
+                    <label class="opt"><input type="checkbox" name="q54" value="D">D. 审批</label>
+                    <label class="opt"><input type="checkbox" name="q54" value="E">E. 节奏</label>
+                </div>
+                <div class="q-explain">4落地：切入、抓手、资源、节奏。</div>
+            </div>
+
+            <div class="question" data-type="multi" data-score="2" data-answer="BDE">
+                <div class="q-stem">6. 以下哪些是奥克斯“流程3阶段”的主要步骤？</div>
+                <div class="options">
+                    <label class="opt"><input type="checkbox" name="q55" value="A">A. 解决问题</label>
+                    <label class="opt"><input type="checkbox" name="q55" value="B">B. IT流程</label>
+                    <label class="opt"><input type="checkbox" name="q55" value="C">C. 追究责任</label>
+                    <label class="opt"><input type="checkbox" name="q55" value="D">D. 业务流程</label>
+                    <label class="opt"><input type="checkbox" name="q55" value="E">E. 管理流程</label>
+                </div>
+                <div class="q-explain">流程3阶段：业务流程、管理流程、IT流程。</div>
+            </div>
+
+            <div class="question" data-type="multi" data-score="2" data-answer="ABDE">
+                <div class="q-stem">7. “7切8问”中的“7切入”包含哪些角度？</div>
+                <div class="options">
+                    <label class="opt"><input type="checkbox" name="q56" value="A">A. 指标</label>
+                    <label class="opt"><input type="checkbox" name="q56" value="B">B. 目标</label>
+                    <label class="opt"><input type="checkbox" name="q56" value="C">C. 汇报</label>
+                    <label class="opt"><input type="checkbox" name="q56" value="D">D. 省人</label>
+                    <label class="opt"><input type="checkbox" name="q56" value="E">E. 问题</label>
+                </div>
+                <div class="q-explain">7切入：目标、指标、项目、问题、省人、提效、创值。</div>
+            </div>
+
+            <div class="question" data-type="multi" data-score="2" data-answer="ABCD">
+                <div class="q-stem">8. 以下属于A模式心得一票否决项的是？</div>
+                <div class="options">
+                    <label class="opt"><input type="checkbox" name="q57" value="A">A. 资源布局不合理</label>
+                    <label class="opt"><input type="checkbox" name="q57" value="B">B. 不契合主题</label>
+                    <label class="opt"><input type="checkbox" name="q57" value="C">C. 态度敷衍</label>
+                    <label class="opt"><input type="checkbox" name="q57" value="D">D. 超600字</label>
+                </div>
+                <div class="q-explain">A模式心得一票否决项：资源布局不合理、不契合主题、态度敷衍、超600字。</div>
+            </div>
+
+            <div class="question" data-type="multi" data-score="2" data-answer="ABCE">
+                <div class="q-stem">9. 奥克斯“4大统一”包含哪些内容？</div>
+                <div class="options">
+                    <label class="opt"><input type="checkbox" name="q58" value="A">A. 统一语言</label>
+                    <label class="opt"><input type="checkbox" name="q58" value="B">B. 统一思想</label>
+                    <label class="opt"><input type="checkbox" name="q58" value="C">C. 统一标准</label>
+                    <label class="opt"><input type="checkbox" name="q58" value="D">D. 统一文化</label>
+                    <label class="opt"><input type="checkbox" name="q58" value="E">E. 统一行动</label>
+                </div>
+                <div class="q-explain">4大统一：统一思想、统一语言、统一标准、统一行动。</div>
+            </div>
+
+            <div class="question" data-type="multi" data-score="2" data-answer="ABCDE">
+                <div class="q-stem">10. 下列选项中，属于奥克斯5大产业的是？</div>
+                <div class="options">
+                    <label class="opt"><input type="checkbox" name="q59" value="A">A. 配电</label>
+                    <label class="opt"><input type="checkbox" name="q59" value="B">B. 医疗</label>
+                    <label class="opt"><input type="checkbox" name="q59" value="C">C. 新能源</label>
+                    <label class="opt"><input type="checkbox" name="q59" value="D">D. 家电（空调）</label>
+                    <label class="opt"><input type="checkbox" name="q59" value="E">E. 用电</label>
+                </div>
+                <div class="q-explain">奥克斯5大产业：家电、用电、配电、医疗、新能源。</div>
+            </div>
+
+            <div class="question" data-type="multi" data-score="2" data-answer="ABCD">
+                <div class="q-stem">11. “4勤3责任”中的“4勤”包含？</div>
+                <div class="options">
+                    <label class="opt"><input type="checkbox" name="q60" value="A">A. 勤访客户</label>
+                    <label class="opt"><input type="checkbox" name="q60" value="B">B. 勤当消费者</label>
+                    <label class="opt"><input type="checkbox" name="q60" value="C">C. 勤当旁观者</label>
+                    <label class="opt"><input type="checkbox" name="q60" value="D">D. 勤做导购员</label>
+                </div>
+                <div class="q-explain">4勤：勤访客户、勤当消费者、勤当旁观者、勤做导购员。</div>
+            </div>
+
+            <div class="question" data-type="multi" data-score="2" data-answer="ABC">
+                <div class="q-stem">12. “4勤3责任”中的“3责任”包含？</div>
+                <div class="options">
+                    <label class="opt"><input type="checkbox" name="q61" value="A">A. 客户不满意是我们的责任</label>
+                    <label class="opt"><input type="checkbox" name="q61" value="B">B. 客户产品卖得不好是我们的责任</label>
+                    <label class="opt"><input type="checkbox" name="q61" value="C">C. 客户赚不到钱是我们的责任</label>
+                    <label class="opt"><input type="checkbox" name="q61" value="D">D. 客户经营亏损是我们的责任</label>
+                </div>
+                <div class="q-explain">3责任：客户不满意、产品卖不好、赚不到钱，都是我们的责任。</div>
+            </div>
+
+            <div class="question" data-type="multi" data-score="2" data-answer="ABC">
+                <div class="q-stem">13. “人才3武器”是指？</div>
+                <div class="options">
+                    <label class="opt"><input type="checkbox" name="q62" value="A">A. 识人标准器</label>
+                    <label class="opt"><input type="checkbox" name="q62" value="B">B. 育人发动机</label>
+                    <label class="opt"><input type="checkbox" name="q62" value="C">C. 用人模拟器</label>
+                    <label class="opt"><input type="checkbox" name="q62" value="D">D. 留人孵化器</label>
+                </div>
+                <div class="q-explain">人才3武器：识人标准器、育人发动机、用人模拟器。</div>
+            </div>
+
+            <div class="question" data-type="multi" data-score="2" data-answer="BCD">
+                <div class="q-stem">14. “识标3目的”是指？</div>
+                <div class="options">
+                    <label class="opt"><input type="checkbox" name="q63" value="A">A. 竞争提升模拟器</label>
+                    <label class="opt"><input type="checkbox" name="q63" value="B">B. 企业文化助推器</label>
+                    <label class="opt"><input type="checkbox" name="q63" value="C">C. 思想提升校正器</label>
+                    <label class="opt"><input type="checkbox" name="q63" value="D">D. 习惯改变训练器</label>
+                </div>
+                <div class="q-explain">识标3目的：企业文化助推器、思想提升校正器、习惯改变训练器。</div>
+            </div>
+
+            <div class="question" data-type="multi" data-score="2" data-answer="ABD">
+                <div class="q-stem">15. “3不激励”包含以下哪些情形？</div>
+                <div class="options">
+                    <label class="opt"><input type="checkbox" name="q64" value="A">A. 机会性获取、难度不大</label>
+                    <label class="opt"><input type="checkbox" name="q64" value="B">B. 创值与付出精力、能力不均称</label>
+                    <label class="opt"><input type="checkbox" name="q64" value="C">C. 业绩达成但过程无为</label>
+                    <label class="opt"><input type="checkbox" name="q64" value="D">D. 导向不正面</label>
+                </div>
+                <div class="q-explain">3不激励：机会性获取难度不大、创值与付出不均称、导向不正面。</div>
+            </div>
+
+            <div class="question" data-type="multi" data-score="2" data-answer="ABCD">
+                <div class="q-stem">16. 三峡交付案中体现了“4分法”的哪些维度？</div>
+                <div class="options">
+                    <label class="opt"><input type="checkbox" name="q65" value="A">A. 分层级</label>
+                    <label class="opt"><input type="checkbox" name="q65" value="B">B. 分模块</label>
+                    <label class="opt"><input type="checkbox" name="q65" value="C">C. 分责权</label>
+                    <label class="opt"><input type="checkbox" name="q65" value="D">D. 分节奏</label>
+                </div>
+                <div class="q-explain">4分法：分层级、分模块、分责权、分节奏，三峡案完整覆盖四个维度。</div>
+            </div>
+
+            <div class="question" data-type="multi" data-score="2" data-answer="ABCDE">
+                <div class="q-stem">17. “5名词”包含以下哪些？</div>
+                <div class="options">
+                    <label class="opt"><input type="checkbox" name="q66" value="A">A. 场景</label>
+                    <label class="opt"><input type="checkbox" name="q66" value="B">B. 基准</label>
+                    <label class="opt"><input type="checkbox" name="q66" value="C">C. 唯一</label>
+                    <label class="opt"><input type="checkbox" name="q66" value="D">D. 比对</label>
+                    <label class="opt"><input type="checkbox" name="q66" value="E">E. 换位</label>
+                </div>
+                <div class="q-explain">5名词：场景、基准、唯一、比对、换位。</div>
+            </div>
+
+            <div class="question" data-type="multi" data-score="2" data-answer="ABCDE">
+                <div class="q-stem">18. “5抓手”包含以下哪些？</div>
+                <div class="options">
+                    <label class="opt"><input type="checkbox" name="q67" value="A">A. 指标</label>
+                    <label class="opt"><input type="checkbox" name="q67" value="B">B. 系统</label>
+                    <label class="opt"><input type="checkbox" name="q67" value="C">C. 流程</label>
+                    <label class="opt"><input type="checkbox" name="q67" value="D">D. 工项</label>
+                    <label class="opt"><input type="checkbox" name="q67" value="E">E. 计划</label>
+                </div>
+                <div class="q-explain">5抓手：指标、系统、流程、工项、计划。</div>
+            </div>
+
+            <div class="question" data-type="multi" data-score="2" data-answer="ABC">
+                <div class="q-stem">19. “3个一切”包含以下哪些？</div>
+                <div class="options">
+                    <label class="opt"><input type="checkbox" name="q68" value="A">A. 一切按经济价值办事</label>
+                    <label class="opt"><input type="checkbox" name="q68" value="B">B. 一切按有理规范办事</label>
+                    <label class="opt"><input type="checkbox" name="q68" value="C">C. 一切按效率节奏办事</label>
+                    <label class="opt"><input type="checkbox" name="q68" value="D">D. 一切按领导指示办事</label>
+                </div>
+                <div class="q-explain">3个一切：有理规范、经济价值、效率节奏。</div>
+            </div>
+
+            <div class="question" data-type="multi" data-score="2" data-answer="ABCDE">
+                <div class="q-stem">20. “557”中的“5广口”包含？</div>
+                <div class="options">
+                    <label class="opt"><input type="checkbox" name="q69" value="A">A. 消费者广口</label>
+                    <label class="opt"><input type="checkbox" name="q69" value="B">B. 客户广口</label>
+                    <label class="opt"><input type="checkbox" name="q69" value="C">C. 服务商广口</label>
+                    <label class="opt"><input type="checkbox" name="q69" value="D">D. 供应商广口</label>
+                    <label class="opt"><input type="checkbox" name="q69" value="E">E. 内价链广口</label>
+                </div>
+                <div class="q-explain">5广口：消费者、客户、服务商、供应商、内价链。</div>
+            </div>
+
+            <div class="question" data-type="multi" data-score="2" data-answer="ABCDE">
+                <div class="q-stem">21. “降本9路径”包含以下哪些？</div>
+                <div class="options">
+                    <label class="opt"><input type="checkbox" name="q70" value="A">A. 引新、破独</label>
+                    <label class="opt"><input type="checkbox" name="q70" value="B">B. 赋能、三新</label>
+                    <label class="opt"><input type="checkbox" name="q70" value="C">C. 去冗、国产</label>
+                    <label class="opt"><input type="checkbox" name="q70" value="D">D. 自制、计转</label>
+                    <label class="opt"><input type="checkbox" name="q70" value="E">E. 集配</label>
+                </div>
+                <div class="q-explain">降本9路径：引新、破独、赋能、三新、去冗、国产、自制、计转、集配。</div>
+            </div>
+
+            <div class="question" data-type="multi" data-score="2" data-answer="ACEFG">
+                <div class="q-stem">22. 奥克斯文化中有严格的红线，评优和获奖都有明确的负面清单。以下哪些情况属于“8不获奖”的情形？</div>
+                <div class="options">
+                    <label class="opt"><input type="checkbox" name="q71" value="A">A. 无IT</label>
+                    <label class="opt"><input type="checkbox" name="q71" value="B">B. 业绩超额完成</label>
+                    <label class="opt"><input type="checkbox" name="q71" value="C">C. 无底线、准入规则</label>
+                    <label class="opt"><input type="checkbox" name="q71" value="D">D. 无合作意识</label>
+                    <label class="opt"><input type="checkbox" name="q71" value="E">E. 无4权</label>
+                    <label class="opt"><input type="checkbox" name="q71" value="F">F. 无流程</label>
+                    <label class="opt"><input type="checkbox" name="q71" value="G">G. 无创值</label>
+                </div>
+                <div class="q-explain">8不获奖：无痛基、无底线准规、无4权、无流程、无IT、不可复制、不可持续、无创值。</div>
+            </div>
+
+            <div class="question" data-type="multi" data-score="2" data-answer="ABC">
+                <div class="q-stem">23. “3源”包含以下哪些？</div>
+                <div class="options">
+                    <label class="opt"><input type="checkbox" name="q72" value="A">A. 来源地</label>
+                    <label class="opt"><input type="checkbox" name="q72" value="B">B. 触发源</label>
+                    <label class="opt"><input type="checkbox" name="q72" value="C">C. 启发源</label>
+                    <label class="opt"><input type="checkbox" name="q72" value="D">D. 发源地</label>
+                </div>
+                <div class="q-explain">3源：来源地（主动）、触发源（被动）、启发源。</div>
+            </div>
+
+            <div class="question" data-type="multi" data-score="2" data-answer="ABCDE">
+                <div class="q-stem">24. “竞聘过5关”包含以下哪些环节？</div>
+                <div class="options">
+                    <label class="opt"><input type="checkbox" name="q73" value="A">A. 前置扫描</label>
+                    <label class="opt"><input type="checkbox" name="q73" value="B">B. 题库</label>
+                    <label class="opt"><input type="checkbox" name="q73" value="C">C. PPT</label>
+                    <label class="opt"><input type="checkbox" name="q73" value="D">D. 6表</label>
+                    <label class="opt"><input type="checkbox" name="q73" value="E">E. PK</label>
+                </div>
+                <div class="q-explain">竞聘5关：前置扫描、题库、PPT、6表、PK。</div>
+            </div>
+
+            <div class="question" data-type="multi" data-score="2" data-answer="ABCD">
+                <div class="q-stem">25. “管理者4要求”包含以下哪些？</div>
+                <div class="options">
+                    <label class="opt"><input type="checkbox" name="q74" value="A">A. 布置让人怎么做</label>
+                    <label class="opt"><input type="checkbox" name="q74" value="B">B. 告知为何这么做</label>
+                    <label class="opt"><input type="checkbox" name="q74" value="C">C. 示范案例怎么做</label>
+                    <label class="opt"><input type="checkbox" name="q74" value="D">D. 赋能全员都能做</label>
+                </div>
+                <div class="q-explain">管理者4要求：布置怎么做、告知为何做、示范案例做、赋能全员做。</div>
+            </div>
+
+            <div class="question" data-type="multi" data-score="2" data-answer="ABCDE">
+                <div class="q-stem">26. “五一线”工作法包含以下哪些内容？</div>
+                <div class="options">
+                    <label class="opt"><input type="checkbox" name="q75" value="A">A. 下基层</label>
+                    <label class="opt"><input type="checkbox" name="q75" value="B">B. 到现场</label>
+                    <label class="opt"><input type="checkbox" name="q75" value="C">C. 见实物</label>
+                    <label class="opt"><input type="checkbox" name="q75" value="D">D. 用数源</label>
+                    <label class="opt"><input type="checkbox" name="q75" value="E">E. 立即干</label>
+                </div>
+                <div class="q-explain">五一线工作法：下基层、到现场、见实物、用数源、立即干。</div>
+            </div>
+
+            <div class="question" data-type="multi" data-score="2" data-answer="ABC">
+                <div class="q-stem">27. 人才三大主线包含以下哪些？</div>
+                <div class="options">
+                    <label class="opt"><input type="checkbox" name="q76" value="A">A. 员工开心满意</label>
+                    <label class="opt"><input type="checkbox" name="q76" value="B">B. 业绩提升快</label>
+                    <label class="opt"><input type="checkbox" name="q76" value="C">C. 用人随便挑</label>
+                    <label class="opt"><input type="checkbox" name="q76" value="D">D. 薪酬涨幅高</label>
+                </div>
+                <div class="q-explain">人才三大主线：员工开心满意、业绩提升快、用人随便挑。</div>
+            </div>
+
+            <div class="question" data-type="multi" data-score="2" data-answer="ABC">
+                <div class="q-stem">28. “3S”管理体系包含以下哪些？</div>
+                <div class="options">
+                    <label class="opt"><input type="checkbox" name="q77" value="A">A. 经营全貌</label>
+                    <label class="opt"><input type="checkbox" name="q77" value="B">B. 职责承接</label>
+                    <label class="opt"><input type="checkbox" name="q77" value="C">C. 个人绩效</label>
+                    <label class="opt"><input type="checkbox" name="q77" value="D">D. 战略规划</label>
+                </div>
+                <div class="q-explain">3S管理体系：经营全貌、职责承接、个人绩效。</div>
+            </div>
+
+            <div class="question" data-type="multi" data-score="2" data-answer="ABC">
+                <div class="q-stem">29. “3个成功要素”包含以下哪些？</div>
+                <div class="options">
+                    <label class="opt"><input type="checkbox" name="q78" value="A">A. 学习是终身伴侣</label>
+                    <label class="opt"><input type="checkbox" name="q78" value="B">B. 时间是宝贵财富</label>
+                    <label class="opt"><input type="checkbox" name="q78" value="C">C. 成功要锲而不舍</label>
+                    <label class="opt"><input type="checkbox" name="q78" value="D">D. 人脉是核心资源</label>
+                </div>
+                <div class="q-explain">3个成功要素：学习是终身伴侣，时间是宝贵财富，成功要锲而不舍。</div>
+            </div>
+
+            <div class="question" data-type="multi" data-score="2" data-answer="ABCD">
+                <div class="q-stem">30. “3分析三不放过”包含以下哪些内容？</div>
+                <div class="options">
+                    <label class="opt"><input type="checkbox" name="q79" value="A">A. 分析问题、原因、措施</label>
+                    <label class="opt"><input type="checkbox" name="q79" value="B">B. 原因不放过</label>
+                    <label class="opt"><input type="checkbox" name="q79" value="C">C. 责任不放过</label>
+                    <label class="opt"><input type="checkbox" name="q79" value="D">D. 纠正措施不放过</label>
+                </div>
+                <div class="q-explain">三分析：分析问题、分析原因、分析措施；三不放过：原因不放过、责任不放过、纠正措施不放过。</div>
+            </div>
+
+            <div class="question" data-type="multi" data-score="2" data-answer="ABC">
+                <div class="q-stem">31. “四要三不要”中的“三不要”包含以下哪些？</div>
+                <div class="options">
+                    <label class="opt"><input type="checkbox" name="q80" value="A">A. 不要投机取巧、急功近利的人</label>
+                    <label class="opt"><input type="checkbox" name="q80" value="B">B. 不要讲多做少、浮在表层的人</label>
+                    <label class="opt"><input type="checkbox" name="q80" value="C">C. 不要过程无为、业绩无成的人</label>
+                    <label class="opt"><input type="checkbox" name="q80" value="D">D. 不要性格内向的人</label>
+                </div>
+                <div class="q-explain">三不要：不要投机取巧急功近利的人、不要讲多做少浮在表层的人、不要过程无为业绩无成的人。</div>
+            </div>
+
+            <div class="question" data-type="multi" data-score="2" data-answer="ABCDE">
+                <div class="q-stem">32. “八大面向”包含以下哪些方向？</div>
+                <div class="options">
+                    <label class="opt"><input type="checkbox" name="q81" value="A">A. 消费者</label>
+                    <label class="opt"><input type="checkbox" name="q81" value="B">B. 安装维修</label>
+                    <label class="opt"><input type="checkbox" name="q81" value="C">C. 运输装卸</label>
+                    <label class="opt"><input type="checkbox" name="q81" value="D">D. 质量失效</label>
+                    <label class="opt"><input type="checkbox" name="q81" value="E">E. 三新</label>
+                </div>
+                <div class="q-explain">八大面向涵盖消费者、安装维修、运输装卸、质量失效、三新等核心业务方向。</div>
+            </div>
+
+            <div class="question" data-type="multi" data-score="2" data-answer="ABC">
+                <div class="q-stem">33. “权限四句话”包含以下哪些原则？</div>
+                <div class="options">
+                    <label class="opt"><input type="checkbox" name="q82" value="A">A. 授权有依据</label>
+                    <label class="opt"><input type="checkbox" name="q82" value="B">B. 用权受监督</label>
+                    <label class="opt"><input type="checkbox" name="q82" value="C">C. 失职要问责</label>
+                    <label class="opt"><input type="checkbox" name="q82" value="D">D. 模糊授权灵活处理</label>
+                </div>
+                <div class="q-explain">权限管理四句话强调授权清晰、权责对等，不包含模糊授权。</div>
+            </div>
+
+            <div class="question" data-type="multi" data-score="2" data-answer="ABC">
+                <div class="q-stem">34. “三大百亿工程”包含以下哪些？</div>
+                <div class="options">
+                    <label class="opt"><input type="checkbox" name="q83" value="A">A. 人才工程</label>
+                    <label class="opt"><input type="checkbox" name="q83" value="B">B. IT工程</label>
+                    <label class="opt"><input type="checkbox" name="q83" value="C">C. 预算工程</label>
+                    <label class="opt"><input type="checkbox" name="q83" value="D">D. 营销工程</label>
+                </div>
+                <div class="q-explain">奥克斯三大百亿工程：人才、IT、预算。</div>
+            </div>
+
+            <div class="question" data-type="multi" data-score="2" data-answer="ABCD">
+                <div class="q-stem">35. “557”中的“7打通”包含以下哪些方向？</div>
+                <div class="options">
+                    <label class="opt"><input type="checkbox" name="q84" value="A">A. 流程打通</label>
+                    <label class="opt"><input type="checkbox" name="q84" value="B">B. 数据打通</label>
+                    <label class="opt"><input type="checkbox" name="q84" value="C">C. 系统打通</label>
+                    <label class="opt"><input type="checkbox" name="q84" value="D">D. 组织打通</label>
+                </div>
+                <div class="q-explain">7打通是数字化转型的核心举措，涵盖流程、数据、系统、组织等多个维度。</div>
+            </div>
+
+            <div class="question" data-type="multi" data-score="2" data-answer="ABC">
+                <div class="q-stem">36. “7切8问”中的“8问”，以下哪些属于核心问题？</div>
+                <div class="options">
+                    <label class="opt"><input type="checkbox" name="q85" value="A">A. 流程是否冗余</label>
+                    <label class="opt"><input type="checkbox" name="q85" value="B">B. 职责是否清晰</label>
+                    <label class="opt"><input type="checkbox" name="q85" value="C">C. 效率是否最优</label>
+                    <label class="opt"><input type="checkbox" name="q85" value="D">D. 人员是否过多、成本是否过高</label>
+                </div>
+                <div class="q-explain">8问聚焦流程、职责、效率等核心维度，不包含“人员多、成本高”这类表层问题。</div>
+            </div>
+
+            <div class="question" data-type="multi" data-score="2" data-answer="ABC">
+                <div class="q-stem">37. “三适配”包含以下哪些维度？</div>
+                <div class="options">
+                    <label class="opt"><input type="checkbox" name="q86" value="A">A. 客户适配</label>
+                    <label class="opt"><input type="checkbox" name="q86" value="B">B. 产品适配</label>
+                    <label class="opt"><input type="checkbox" name="q86" value="C">C. 节奏适配</label>
+                    <label class="opt"><input type="checkbox" name="q86" value="D">D. 人员适配</label>
+                </div>
+                <div class="q-explain">三适配：客户适配、产品适配、节奏适配。</div>
+            </div>
+
+            <div class="question" data-type="multi" data-score="2" data-answer="ABC">
+                <div class="q-stem">38. “6最”包含以下哪些认知？</div>
+                <div class="options">
+                    <label class="opt"><input type="checkbox" name="q87" value="A">A. 拿来主义最快捷</label>
+                    <label class="opt"><input type="checkbox" name="q87" value="B">B. 比对方法最直观</label>
+                    <label class="opt"><input type="checkbox" name="q87" value="C">C. 方法工具最管用</label>
+                    <label class="opt"><input type="checkbox" name="q87" value="D">D. 自主研发最核心</label>
+                </div>
+                <div class="q-explain">6最包含拿来主义最快捷、比对方法最直观、方法工具最管用等核心认知。</div>
+            </div>
+
+            <div class="question" data-type="multi" data-score="2" data-answer="ABC">
+                <div class="q-stem">39. “纪要工任案”体现了4分法的哪些维度？</div>
+                <div class="options">
+                    <label class="opt"><input type="checkbox" name="q88" value="A">A. 分层级</label>
+                    <label class="opt"><input type="checkbox" name="q88" value="B">B. 分责权</label>
+                    <label class="opt"><input type="checkbox" name="q88" value="C">C. 分节奏</label>
+                    <label class="opt"><input type="checkbox" name="q88" value="D">D. 分模块</label>
+                </div>
+                <div class="q-explain">纪要工任案体现4分法的分层级、分责权、分节奏，不包含分模块。</div>
+            </div>
+
+            <div class="question" data-type="multi" data-score="2" data-answer="AB">
+                <div class="q-stem">40. “EHR项目案例”体现了4分法的哪些维度？</div>
+                <div class="options">
+                    <label class="opt"><input type="checkbox" name="q89" value="A">A. 分模块</label>
+                    <label class="opt"><input type="checkbox" name="q89" value="B">B. 分责权</label>
+                    <label class="opt"><input type="checkbox" name="q89" value="C">C. 分节奏</label>
+                    <label class="opt"><input type="checkbox" name="q89" value="D">D. 分层级</label>
+                </div>
+                <div class="q-explain">新疆EHR项目案例体现4分法的分模块、分责权维度。</div>
+            </div>
+
+            <div class="question" data-type="multi" data-score="2" data-answer="ABC">
+                <div class="q-stem">41. “329”管理体系包含以下哪些部分？</div>
+                <div class="options">
+                    <label class="opt"><input type="checkbox" name="q90" value="A">A. 3S</label>
+                    <label class="opt"><input type="checkbox" name="q90" value="B">B. 2在线</label>
+                    <label class="opt"><input type="checkbox" name="q90" value="C">C. 9一键</label>
+                    <label class="opt"><input type="checkbox" name="q90" value="D">D. 4落地</label>
+                </div>
+                <div class="q-explain">329体系：3S、2在线、9一键。</div>
+            </div>
+
+            <div class="question" data-type="multi" data-score="2" data-answer="ABC">
+                <div class="q-stem">42. “管理创新”包含以下哪些方向？</div>
+                <div class="options">
+                    <label class="opt"><input type="checkbox" name="q91" value="A">A. 人才创新</label>
+                    <label class="opt"><input type="checkbox" name="q91" value="B">B. 数字化创新</label>
+                    <label class="opt"><input type="checkbox" name="q91" value="C">C. 文化创新</label>
+                    <label class="opt"><input type="checkbox" name="q91" value="D">D. 领导创新</label>
+                </div>
+                <div class="q-explain">管理创新包含人才、数字化、文化创新，不包含领导创新。</div>
+            </div>
+
+            <!-- 新增多选题 -->
+            <div class="question" data-type="multi" data-score="2" data-answer="ABCE">
+                <div class="q-stem">43. 在“7切8问”中，“8问题”指出了流程中常见的八种弊病，以下哪些属于“8问题”？</div>
+                <div class="options">
+                    <label class="opt"><input type="checkbox" name="q92" value="A">A. 模糊多</label>
+                    <label class="opt"><input type="checkbox" name="q92" value="B">B. 效率低</label>
+                    <label class="opt"><input type="checkbox" name="q92" value="C">C. 烦恼多</label>
+                    <label class="opt"><input type="checkbox" name="q92" value="D">D. 人员多</label>
+                    <label class="opt"><input type="checkbox" name="q92" value="E">E. 差错多</label>
+                    <label class="opt"><input type="checkbox" name="q92" value="F">F. 成本高</label>
+                </div>
+                <div class="q-explain">8问题包含模糊多、效率低、烦恼多、差错多等核心弊病，人员多、成本高不属于8问题范畴。</div>
+            </div>
+
+            <div class="question" data-type="multi" data-score="2" data-answer="ABCDEF">
+                <div class="q-stem">44. A模式心得的评审维度有哪些？</div>
+                <div class="options">
+                    <label class="opt"><input type="checkbox" name="q93" value="A">A. 案例有新见解、可借鉴、建议启发有价值</label>
+                    <label class="opt"><input type="checkbox" name="q93" value="B">B. 逻辑思维、名词定义</label>
+                    <label class="opt"><input type="checkbox" name="q93" value="C">C. 案例实际价值创造</label>
+                    <label class="opt"><input type="checkbox" name="q93" value="D">D. 理解深刻、思路对接</label>
+                    <label class="opt"><input type="checkbox" name="q93" value="E">E. 主题契合、不生搬硬套</label>
+                    <label class="opt"><input type="checkbox" name="q93" value="F">F. 下步工作思考</label>
+                </div>
+                <div class="q-explain">A模式心得评审维度涵盖逻辑、主题、案例价值、工作思考、见解启发、思路对接等多个方面。</div>
+            </div>
+
+            <div class="question" data-type="multi" data-score="2" data-answer="ABCDE">
+                <div class="q-stem">45. 在“557”方法论中，“7打通”旨在消除各环节间的信息孤岛和壁垒。以下哪些属于“7打通”的内容？</div>
+                <div class="options">
+                    <label class="opt"><input type="checkbox" name="q94" value="A">A. 业务与技支打通</label>
+                    <label class="opt"><input type="checkbox" name="q94" value="B">B. 目标与9一键打通</label>
+                    <label class="opt"><input type="checkbox" name="q94" value="C">C. 部门与部门打通</label>
+                    <label class="opt"><input type="checkbox" name="q94" value="D">D. 会案与文化思想打通</label>
+                    <label class="opt"><input type="checkbox" name="q94" value="E">E. 业前台与管后台打通</label>
+                </div>
+                <div class="q-explain">7打通涵盖业务与技支、目标与9一键、部门与部门、会案与文化思想、业前台与管后台等核心维度，实现全链路协同。</div>
+            </div>
+
+            <div class="question" data-type="multi" data-score="2" data-answer="ABCE">
+                <div class="q-stem">46. 降本增效是企业永恒的主题，奥克斯总结了“降本9路径”。以下哪些选项属于这9条路径？</div>
+                <div class="options">
+                    <label class="opt"><input type="checkbox" name="q95" value="A">A. 引新</label>
+                    <label class="opt"><input type="checkbox" name="q95" value="B">B. 去冗</label>
+                    <label class="opt"><input type="checkbox" name="q95" value="C">C. 赋能</label>
+                    <label class="opt"><input type="checkbox" name="q95" value="D">D. 涨价</label>
+                    <label class="opt"><input type="checkbox" name="q95" value="E">E. 破独</label>
+                    <label class="opt"><input type="checkbox" name="q95" value="F">F. 优化</label>
+                </div>
+                <div class="q-explain">降本9路径为引新、破独、赋能、三新、去冗、国产、自制、计转、集配，不包含涨价、优化。</div>
+            </div>
+
+            <div class="question" data-type="multi" data-score="2" data-answer="ABCD">
+                <div class="q-stem">47. A模式心得中的必备项是？</div>
+                <div class="options">
+                    <label class="opt"><input type="checkbox" name="q96" value="A">A. 逻辑思维，名词定义</label>
+                    <label class="opt"><input type="checkbox" name="q96" value="B">B. 主题契合，不生搬硬套</label>
+                    <label class="opt"><input type="checkbox" name="q96" value="C">C. 下步工作思考</label>
+                    <label class="opt"><input type="checkbox" name="q96" value="D">D. 案例实际价值创造</label>
+                </div>
+                <div class="q-explain">A模式心得必备项包含逻辑思维与名词定义、主题契合、下步工作思考、案例实际价值创造。</div>
+            </div>
+
+            <div class="section-btn-area">
+                <button type="button" class="submit-section-btn" id="submitMulti">提交多选题</button>
+            </div>
+            <div class="section-result" id="multiResult"></div>
+        </div>
+
+        <!-- 判断题模块 -->
+        <div id="judgeSection">
+            <div class="section-title">三、判断题（共28题，每题2分，共56分）</div>
+
+            <div class="question" data-type="judge" data-score="2" data-answer="A">
+                <div class="q-stem">1. “文化5词（13355）”包括：1个梦想、3一切、3个成功要素、5个核心围绕、5大方法工具。</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q97" value="A">A. 正确</label>
+                    <label class="opt"><input type="radio" name="q97" value="B">B. 错误</label>
+                </div>
+                <div class="q-explain">表述正确，文化5词即13355体系，是奥克斯核心文化。</div>
+            </div>
+
+            <div class="question" data-type="judge" data-score="2" data-answer="B">
+                <div class="q-stem">2. “汇报3导向”指的是问题导向、价值导向和需求导向。</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q98" value="A">A. 正确</label>
+                    <label class="opt"><input type="radio" name="q98" value="B">B. 错误</label>
+                </div>
+                <div class="q-explain">3导向为问题导向、价值导向、目标导向，不是需求导向。</div>
+            </div>
+
+            <div class="question" data-type="judge" data-score="2" data-answer="A">
+                <div class="q-stem">3. “2高1低”指高质量、高效率、低成本，是奥克斯经营管理的核心目标之一。</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q99" value="A">A. 正确</label>
+                    <label class="opt"><input type="radio" name="q99" value="B">B. 错误</label>
+                </div>
+                <div class="q-explain">表述正确。</div>
+            </div>
+
+            <div class="question" data-type="judge" data-score="2" data-answer="A">
+                <div class="q-stem">4. “竞聘过5关”是指内部竞聘需通过前置扫描、题库、PPT、6表、PK五个环节。</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q100" value="A">A. 正确</label>
+                    <label class="opt"><input type="radio" name="q100" value="B">B. 错误</label>
+                </div>
+                <div class="q-explain">表述正确。</div>
+            </div>
+
+            <div class="question" data-type="judge" data-score="2" data-answer="B">
+                <div class="q-stem">5. 奥克斯后备人才分为接班人和高潜人两个梯队，其中高潜人是比接班人更高一级的储备。</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q101" value="A">A. 正确</label>
+                    <label class="opt"><input type="radio" name="q101" value="B">B. 错误</label>
+                </div>
+                <div class="q-explain">接班人是更高层级储备，高潜人培养达标后可晋级为接班人。</div>
+            </div>
+
+            <div class="question" data-type="judge" data-score="2" data-answer="B">
+                <div class="q-stem">6. IT ABC表中，A表以激励为动力，B表以质量为底线。</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q102" value="A">A. 正确</label>
+                    <label class="opt"><input type="radio" name="q102" value="B">B. 错误</label>
+                </div>
+                <div class="q-explain">A表以质量为底线，B表以激励为牵引，题目表述颠倒。</div>
+            </div>
+
+            <div class="question" data-type="judge" data-score="2" data-answer="A">
+                <div class="q-stem">7. “交期品质论”认为：交期好的质量一定好、成本一定低，交期瓶颈多由品质问题引起。</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q103" value="A">A. 正确</label>
+                    <label class="opt"><input type="radio" name="q103" value="B">B. 错误</label>
+                </div>
+                <div class="q-explain">表述正确，是奥克斯效率管理的核心认知。</div>
+            </div>
+
+            <div class="question" data-type="judge" data-score="2" data-answer="B">
+                <div class="q-stem">8. 在奥克斯，所有事情都不能直接向领导单独汇报，必须在团队中讨论。</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q104" value="A">A. 正确</label>
+                    <label class="opt"><input type="radio" name="q104" value="B">B. 错误</label>
+                </div>
+                <div class="q-explain">有3种情况可单独汇报：团队评价调整、困惑影响信心、不成熟想法怕分散话题。</div>
+            </div>
+
+            <div class="question" data-type="judge" data-score="2" data-answer="B">
+                <div class="q-stem">9. 金钱是奥克斯唯一的激励方式。</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q105" value="A">A. 正确</label>
+                    <label class="opt"><input type="radio" name="q105" value="B">B. 错误</label>
+                </div>
+                <div class="q-explain">金钱论为“没有钱万万不能，唯钱是图坚决不能”，并非唯一激励方式。</div>
+            </div>
+
+            <div class="question" data-type="judge" data-score="2" data-answer="A">
+                <div class="q-stem">10. “6S触发”中包含“轻考→严考”的转化方向。</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q106" value="A">A. 正确</label>
+                    <label class="opt"><input type="radio" name="q106" value="B">B. 错误</label>
+                </div>
+                <div class="q-explain">表述正确，6S触发第五条为轻考→严考。</div>
+            </div>
+
+            <div class="question" data-type="judge" data-score="2" data-answer="B">
+                <div class="q-stem">11. “流程5句话”包含“新规出台不模拟”。</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q107" value="A">A. 正确</label>
+                    <label class="opt"><input type="radio" name="q107" value="B">B. 错误</label>
+                </div>
+                <div class="q-explain">流程5句话为“新规出台须模拟”，选项表述相反。</div>
+            </div>
+
+            <div class="question" data-type="judge" data-score="2" data-answer="A">
+                <div class="q-stem">12. “主动赋能”要求员工主动分享有借鉴意义的案例，并讲解指导他人应用。</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q108" value="A">A. 正确</label>
+                    <label class="opt"><input type="radio" name="q108" value="B">B. 错误</label>
+                </div>
+                <div class="q-explain">表述正确。</div>
+            </div>
+
+            <div class="question" data-type="judge" data-score="2" data-answer="B">
+                <div class="q-stem">13. 奥克斯始创于1994年。</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q109" value="A">A. 正确</label>
+                    <label class="opt"><input type="radio" name="q109" value="B">B. 错误</label>
+                </div>
+                <div class="q-explain">奥克斯始创于1986年。</div>
+            </div>
+
+            <div class="question" data-type="judge" data-score="2" data-answer="A">
+                <div class="q-stem">14. “6大留人”包含薪资留人、氛围留人、感情留人、公平留人、事业留人、文化留人。</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q110" value="A">A. 正确</label>
+                    <label class="opt"><input type="radio" name="q110" value="B">B. 错误</label>
+                </div>
+                <div class="q-explain">表述正确，6大留人不含“激励留人”。</div>
+            </div>
+
+            <div class="question" data-type="judge" data-score="2" data-answer="B">
+                <div class="q-stem">15. “3严打”包含未报先批、未明先动、未始发留痕。</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q111" value="A">A. 正确</label>
+                    <label class="opt"><input type="radio" name="q111" value="B">B. 错误</label>
+                </div>
+                <div class="q-explain">3严打为未立先动、未明先动、未始发留痕，不含未报先批。</div>
+            </div>
+
+            <div class="question" data-type="judge" data-score="2" data-answer="A">
+                <div class="q-stem">16. “五一线”工作法的内容是：下基层、到现场、见实物、用数源、立即干。</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q112" value="A">A. 正确</label>
+                    <label class="opt"><input type="radio" name="q112" value="B">B. 错误</label>
+                </div>
+                <div class="q-explain">表述符合五一线工作法的标准定义。</div>
+            </div>
+
+            <div class="question" data-type="judge" data-score="2" data-answer="A">
+                <div class="q-stem">17. 三适配指的是客户适配、产品适配、节奏适配。</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q113" value="A">A. 正确</label>
+                    <label class="opt"><input type="radio" name="q113" value="B">B. 错误</label>
+                </div>
+                <div class="q-explain">三适配的三个核心维度即客户、产品、节奏。</div>
+            </div>
+
+            <div class="question" data-type="judge" data-score="2" data-answer="A">
+                <div class="q-stem">18. 逆流程是指从用户需求出发，反向推导流程设计的工作方法。</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q114" value="A">A. 正确</label>
+                    <label class="opt"><input type="radio" name="q114" value="B">B. 错误</label>
+                </div>
+                <div class="q-explain">逆流程以终为始，从结果和用户需求反向优化流程设计。</div>
+            </div>
+
+            <div class="question" data-type="judge" data-score="2" data-answer="B">
+                <div class="q-stem">19. 切割解决问题的方法是由简化繁，把简单问题拆分为复杂模块。</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q115" value="A">A. 正确</label>
+                    <label class="opt"><input type="radio" name="q115" value="B">B. 错误</label>
+                </div>
+                <div class="q-explain">切割法核心是化繁为简，把复杂问题拆解为可落地的小模块。</div>
+            </div>
+
+            <div class="question" data-type="judge" data-score="2" data-answer="B">
+                <div class="q-stem">20. 奥克斯电能产业拥有7大研发中心、17大制造基地。</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q116" value="A">A. 正确</label>
+                    <label class="opt"><input type="radio" name="q116" value="B">B. 错误</label>
+                </div>
+                <div class="q-explain">电能产业为4大研发中心、10大制造中心；集团整体为7大研发中心、17大制造基地。</div>
+            </div>
+
+            <div class="question" data-type="judge" data-score="2" data-answer="A">
+                <div class="q-stem">21. “6否决”条款中，低错多犯会被一票否决。</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q117" value="A">A. 正确</label>
+                    <label class="opt"><input type="radio" name="q117" value="B">B. 错误</label>
+                </div>
+                <div class="q-explain">低错多犯属于6否决的一票否决情形。</div>
+            </div>
+
+            <div class="question" data-type="judge" data-score="2" data-answer="B">
+                <div class="q-stem">22. 用人8维度中，职业证书是核心考察项。</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q118" value="A">A. 正确</label>
+                    <label class="opt"><input type="radio" name="q118" value="B">B. 错误</label>
+                </div>
+                <div class="q-explain">选人8维度不将职业证书作为核心考察项。</div>
+            </div>
+
+            <div class="question" data-type="judge" data-score="2" data-answer="B">
+                <div class="q-stem">23. 奥克斯目前有5家上市公司。</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q119" value="A">A. 正确</label>
+                    <label class="opt"><input type="radio" name="q119" value="B">B. 错误</label>
+                </div>
+                <div class="q-explain">奥克斯目前拥有3家上市公司。</div>
+            </div>
+
+            <div class="question" data-type="judge" data-score="2" data-answer="B">
+                <div class="q-stem">24. 降本9路径包含通过涨价提升利润的方式。</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q120" value="A">A. 正确</label>
+                    <label class="opt"><input type="radio" name="q120" value="B">B. 错误</label>
+                </div>
+                <div class="q-explain">降本9路径聚焦内部降本增效，不包含涨价提利。</div>
+            </div>
+
+            <div class="question" data-type="judge" data-score="2" data-answer="A">
+                <div class="q-stem">25. “329”管理体系指的是3S、2在线、9一键。</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q121" value="A">A. 正确</label>
+                    <label class="opt"><input type="radio" name="q121" value="B">B. 错误</label>
+                </div>
+                <div class="q-explain">329管理体系的标准构成即3S、2在线、9一键。</div>
+            </div>
+
+            <div class="question" data-type="judge" data-score="2" data-answer="B">
+                <div class="q-stem">26. 五一线工作法包含“听汇报”这一核心环节。</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q122" value="A">A. 正确</label>
+                    <label class="opt"><input type="radio" name="q122" value="B">B. 错误</label>
+                </div>
+                <div class="q-explain">五一线强调下基层、到现场、见实物，不包含“听汇报”。</div>
+            </div>
+
+            <!-- 新增判断题 -->
+            <div class="question" data-type="judge" data-score="2" data-answer="A">
+                <div class="q-stem">27. 奥克斯的流程必须具备名词定义精准，特殊流程，规范标准，须模拟，有场景、有案例、有基准，可测量、可计算、可植入IT，刚保争弃。</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q123" value="A">A. 正确</label>
+                    <label class="opt"><input type="radio" name="q123" value="B">B. 错误</label>
+                </div>
+                <div class="q-explain">表述符合奥克斯流程的标准定义与要求。</div>
+            </div>
+
+            <div class="question" data-type="judge" data-score="2" data-answer="B">
+                <div class="q-stem">28. 企管图11词中强调“高增5+3+2”，其中3是指“3适配”，具体是指：客户、产品、交期。</div>
+                <div class="options">
+                    <label class="opt"><input type="radio" name="q124" value="A">A. 正确</label>
+                    <label class="opt"><input type="radio" name="q124" value="B">B. 错误</label>
+                </div>
+                <div class="q-explain">3适配指客户适配、产品适配、节奏适配，而非交期。</div>
+            </div>
+
+            <div class="section-btn-area">
+                <button type="button" class="submit-section-btn" id="submitJudge">提交判断题</button>
+            </div>
+            <div class="section-result" id="judgeResult"></div>
+        </div>
+    </form>
+</div>
+
+<script>
+    // 通用批改函数
+    function gradeSection(sectionId, resultId) {
+        const section = document.getElementById(sectionId);
+        const questions = section.querySelectorAll('.question');
+        const btn = section.querySelector('.submit-section-btn');
+        let totalScore = 0;
+        let correctCount = 0;
+        let wrongList = [];
+
+        questions.forEach((q, idx) => {
+            const type = q.dataset.type;
+            const score = parseFloat(q.dataset.score);
+            const answer = q.dataset.answer;
+            const qNum = idx + 1;
+            const qStem = q.querySelector('.q-stem').innerText;
+            const explain = q.querySelector('.q-explain').innerHTML;
+            let userAnswer = '';
+            let isCorrect = false;
+
+            if(type === 'single' || type === 'judge'){
+                const selected = q.querySelector('input:checked');
+                if(selected){
+                    userAnswer = selected.value;
+                    isCorrect = userAnswer === answer;
+                } else {
+                    userAnswer = '未作答';
+                }
+            } else if(type === 'multi'){
+                const selected = q.querySelectorAll('input:checked');
+                const values = Array.from(selected).map(i => i.value).sort().join('');
+                userAnswer = values || '未作答';
+                isCorrect = values === answer.split('').sort().join('');
+            }
+
+            if(isCorrect){
+                totalScore += score;
+                correctCount++;
+            } else {
+                wrongList.push({
+                    num: qNum,
+                    stem: qStem,
+                    userAns: userAnswer,
+                    correctAns: answer,
+                    explain: explain
+                });
+            }
+        });
+
+        // 禁用该模块
+        section.classList.add('disabled');
+        section.querySelectorAll('input').forEach(i => i.disabled = true);
+        btn.disabled = true;
+
+        // 渲染结果
+        const resultBox = document.getElementById(resultId);
+        let html = `<div class="section-score">本部分得分：${totalScore} 分 | 答对 ${correctCount}/${questions.length} 题</div>`;
+        
+        if(wrongList.length === 0){
+            html += '<div style="text-align:center; color:#009944; padding:10px;">恭喜！本部分全部答对！</div>';
+        } else {
+            html += '<h4 style="margin-bottom:10px; color:#333;">错题详情：</h4>';
+            wrongList.forEach(item => {
+                html += `
+                <div class="wrong-item">
+                    <div><strong>第${item.num}题：</strong>${item.stem}</div>
+                    <div class="user-ans">你的答案：${item.userAns}</div>
+                    <div class="correct-ans">正确答案：${item.correctAns}</div>
+                    <div class="wrong-explain">解析：${item.explain}</div>
+                </div>
+                `;
+            });
+        }
+
+        resultBox.innerHTML = html;
+        resultBox.style.display = 'block';
+        resultBox.scrollIntoView({behavior: 'smooth', block: 'start'});
+    }
+
+    // 绑定三个模块按钮
+    document.getElementById('submitSingle').addEventListener('click', () => {
+        gradeSection('singleSection', 'singleResult');
+    });
+
+    document.getElementById('submitMulti').addEventListener('click', () => {
+        gradeSection('multiSection', 'multiResult');
+    });
+
+    document.getElementById('submitJudge').addEventListener('click', () => {
+        gradeSection('judgeSection', 'judgeResult');
+    });
+</script>
 </body>
 </html>
